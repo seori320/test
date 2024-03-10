@@ -21,17 +21,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "SeoyoonLee",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/seoyo/Desktop/MovieRecipes/tool",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/seoyo/Desktop/MovieRecipes/tool/project&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,6 +43,14 @@
       <workItem from="1710046005251" duration="65000" />
       <workItem from="1710046096357" duration="25000" />
       <workItem from="1710046162743" duration="72000" />
+      <workItem from="1710070927747" duration="71000" />
+      <workItem from="1710071003182" duration="35000" />
+      <workItem from="1710072359884" duration="8000" />
+      <workItem from="1710072445469" duration="73000" />
+      <workItem from="1710072535826" duration="22000" />
+      <workItem from="1710072572285" duration="115000" />
+      <workItem from="1710072703254" duration="63000" />
+      <workItem from="1710072787333" duration="29000" />
     </task>
     <servers />
   </component>
