@@ -1,6 +1,6 @@
 package com.seoyoon.movierecipes.jwt;
 
-import com.seoyoon.movierecipes.dto.TokenDto;
+import com.seoyoon.movierecipes.dto.login.TokenDto;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;

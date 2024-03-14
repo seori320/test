@@ -1,7 +1,7 @@
 package com.seoyoon.movierecipes.service;
 
 import com.seoyoon.movierecipes.dao.MemberRepository;
-import com.seoyoon.movierecipes.dto.MemberResponseDto;
+import com.seoyoon.movierecipes.dto.login.MemberResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

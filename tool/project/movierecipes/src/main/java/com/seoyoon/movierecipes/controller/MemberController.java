@@ -1,6 +1,6 @@
 package com.seoyoon.movierecipes.controller;
 
-import com.seoyoon.movierecipes.dto.MemberResponseDto;
+import com.seoyoon.movierecipes.dto.login.MemberResponseDto;
 import com.seoyoon.movierecipes.service.MemberService;
 import com.seoyoon.movierecipes.util.SecurityUtil;
 import lombok.RequiredArgsConstructor;

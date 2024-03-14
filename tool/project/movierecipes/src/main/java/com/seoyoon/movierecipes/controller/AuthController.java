@@ -1,9 +1,9 @@
 package com.seoyoon.movierecipes.controller;
 
-import com.seoyoon.movierecipes.dto.MemberRequestDto;
-import com.seoyoon.movierecipes.dto.MemberResponseDto;
-import com.seoyoon.movierecipes.dto.TokenDto;
-import com.seoyoon.movierecipes.dto.TokenRequestDto;
+import com.seoyoon.movierecipes.dto.login.MemberRequestDto;
+import com.seoyoon.movierecipes.dto.login.MemberResponseDto;
+import com.seoyoon.movierecipes.dto.login.TokenDto;
+import com.seoyoon.movierecipes.dto.login.TokenRequestDto;
 import com.seoyoon.movierecipes.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
