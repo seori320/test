@@ -72,8 +72,8 @@ public class FileService {
                     .fileType(multipartFile.getContentType())
                     .build();
             saveFile.setMappingPost(post);
-            // File Entity 저장 및 DTO로 변환 전송
 
+            // File Entity 저장 및 DTO로 변환 전송
             fileEntitys.add(fileRepository.save(saveFile));
         }
         List<ResFileUploadDto> dtos = fileEntitys.stream()
@@ -85,7 +85,7 @@ public class FileService {
 
     public ResFileDownloadDto download(Long fileId) throws IOException {
         FileEntity file = fileRepository.findById(fileId).orElseThrow(
-                () -> new FileNotFoundException()
+                FileNotFoundException::new
         );
         String filePath = FOLDER_PATH + file.getFilePath();
         String contentType = determineContentType(file.getFileType());
@@ -108,16 +108,12 @@ public class FileService {
     }
 
     private String determineContentType(String contentType) {
-        // ContentType에 따라 MediaType 결정
-        switch (contentType) {
-            case "image/png":
-                return MediaType.IMAGE_PNG_VALUE;
-            case "image/jpeg":
-                return MediaType.IMAGE_JPEG_VALUE;
-            case "text/plain":
-                return MediaType.TEXT_PLAIN_VALUE;
-            default:
-                return MediaType.APPLICATION_OCTET_STREAM_VALUE;
-        }
+        // ContentType 에 따라 MediaType 결정
+        return switch (contentType) {
+            case "image/png" -> MediaType.IMAGE_PNG_VALUE;
+            case "image/jpeg" -> MediaType.IMAGE_JPEG_VALUE;
+            case "text/plain" -> MediaType.TEXT_PLAIN_VALUE;
+            default -> MediaType.APPLICATION_OCTET_STREAM_VALUE;
+        };
     }
 }

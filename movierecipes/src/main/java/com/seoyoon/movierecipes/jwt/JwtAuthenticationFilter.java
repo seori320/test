@@ -49,15 +49,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             try {
                 username = this.jwtTokenUtil.getUsernameFromToken(authToken);
             } catch (IllegalArgumentException ex) {
-                log.info("fail get user id");
-                ex.printStackTrace();
+                log.info("fail get user id", ex);
             } catch (ExpiredJwtException ex) {
-                log.info("Token expired");
-                ex.printStackTrace();
+                log.info("Token expired", ex);
             } catch (MalformedJwtException ex) {
-                log.info("Invalid JWT !!");
+                log.info("Invalid JWT !!", ex);
                 System.out.println();
-                ex.printStackTrace();
             } catch (Exception e) {
                 log.info("Unable to get JWT Token !!");
                 e.getStackTrace();

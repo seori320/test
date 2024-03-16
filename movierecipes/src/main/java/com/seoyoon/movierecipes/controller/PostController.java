@@ -31,7 +31,7 @@ public class PostController {
     // 페이징 목록
     @GetMapping("/list")
     public ResponseEntity<Page<ResPostListDto>> postList(
-            @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+            @PageableDefault(size = 9, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
         Page<ResPostListDto> listDTO = postService.getAllPosts(pageable);
         return ResponseEntity.status(HttpStatus.OK).body(listDTO);
     }

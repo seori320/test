@@ -49,6 +49,12 @@ public class PostService {
         } else if (!searchData.getWriterName().isEmpty()) {
             result = postRepository.findAllUsernameContaining(searchData.getWriterName(), pageable);
         }
+
+        // 여기 만약 문제없으면 지우기
+        if (result == null) {
+            return Page.empty();
+        }
+
         List<ResPostListDto> list = result.getContent().stream()
                 .map(ResPostListDto::fromEntity)
                 .collect(Collectors.toList());

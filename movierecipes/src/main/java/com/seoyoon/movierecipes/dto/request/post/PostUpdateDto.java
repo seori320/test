@@ -19,7 +19,7 @@ public class PostUpdateDto {
     private String content;
 
     @Builder
-    public PostUpdateDto(String title, String content, String category) {
+    public PostUpdateDto(String title, String content) {
         this.title = title;
         this.content = content;
     }
