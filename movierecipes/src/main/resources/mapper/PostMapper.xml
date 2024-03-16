@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.board.repository.mybatis.PostMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO post( member_id, title, content, "createdAt", "updatedAt", views)
+        values (#{memberId}, #{title}, #{content}, #{createdAt}, #{updatedAt}, #{views})
+    </insert>
+
+    <select id="findById" resultType="Post">
+        SELECT post_id, member_id, title, content, "createdAt", "updatedAt", views
+        FROM post
+        where post_id = #{id}
+    </select>
+
+    <select id="findAll" resultType="Post">
+        select id, member_id, title, content, createdAt, updatedAt, views
+        from post
+        <where>
+            <if test="searchCode=='title' and searchWord !=null and searchWord !=''">
+                LOWER(title) LIKE LOWER(concat('%',#{searchWord},'%'))
+            </if>
+            <if test="searchCode=='content' and searchWord !=null and searchWord !=''">
+                LOWER(content) LIKE LOWER(concat('%',#{searchWord},'%'))
+            </if>
+            <if test="searchCode=='writerId' and searchWord !=null and searchWord !=''">
+                LOWER(member_id)=LOWER(#{searchWord})
+            </if>
+            <if test="searchCode=='titleAndContent' and searchWord !=null and searchWord !=''">
+                LOWER(title) LIKE LOWER(concat('%',#{searchWord},'%')) or LOWER(content) LIKE LOWER(concat('%',#{searchWord},'%'))
+            </if>
+        </where>
+    </select>
+
+    <update id="updatePost">
+        UPDATE post
+        SET title=#{updateParam.title},
+            content=#{updateParam.content},
+            updatedAt=#{updateParam.updatedAt}
+        WHERE post_id=#{id}
+    </update>
+
+    <update id="addView">
+        UPDATE post
+        SET views=views+1
+        WHERE post_id=#{postId}
+    </update>
+
+    <delete id="deletePost">
+        DELETE FROM post
+        WHERE post_id=#{postId}
+    </delete>
+
+</mapper>

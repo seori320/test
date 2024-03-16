@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.board.repository.mybatis.CommentMapper">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO postcomment(member_id, post_id, content, "createdAt", "updatedAt")
+        values (#{memberId}, #{postId}, #{content}, #{createdAt}, #{updatedAt})
+    </insert>
+
+    <select id="findById" resultType="Comment">
+        SELECT postcomment_id, member_id, post_id, content, "createdAt", "updatedAt"
+        FROM postcomment
+        where postcomment_id = #{id}
+    </select>
+
+    <select id="findByPostId" resultType="Comment">
+        SELECT postcomment_id, member_id, post_id, content, "createdAt", "updatedAt"
+        FROM postcomment
+        where post_id=#{postId}
+    </select>
+
+    <update id="updateComment">
+        UPDATE postcomment
+        SET content=#{content}
+        WHERE postcomment_id=#{postcommentId}
+    </update>
+
+    <delete id="deleteComment">
+        DELETE FROM postcomment
+        WHERE postcomment_id=#{postcommentId}
+    </delete>
+
+</mapper>
