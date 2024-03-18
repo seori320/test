@@ -43,7 +43,7 @@ function PostWrite() {
 
   /* 파일 업로드 */
   const fileUpload = async (postId) => {
-	console.log("업로드할 파일 목록:", files);
+	console.log("Upload File List:", files);
     // 파일 데이터 저장
     const fd = new FormData();
     files.forEach((file) => fd.append("file", file));
@@ -54,7 +54,7 @@ function PostWrite() {
         console.log("[file.jsx] fileUpload() success :D");
         console.log(resp.data);
 
-        setModalMessage("파일 업로드 성공 :D");
+        setModalMessage("Successful File Upload :D");
         setShowModal(true);
       })
       .catch((err) => {
@@ -79,7 +79,7 @@ function PostWrite() {
         console.log("postId:", postId);
         fileUpload(postId);
 
-        setModalMessage("새로운 게시글을 성공적으로 등록했습니다 :D");
+        setModalMessage("Successful Upload Post :D");
         setShowModal(true);
         navigate(`/postdetail/${resp.data.postId}`); // 새롭게 등록한 글 상세로 이동
       })
@@ -97,7 +97,7 @@ function PostWrite() {
 
     // 로그인한 사용자인지 체크
     if (!auth) {
-      setModalMessage("로그인 한 사용자만 게시글을 작성할 수 있습니다 !");
+      setModalMessage("Only login users can create posts !");
       setShowModal(true);
       navigate(-1);
     }
@@ -108,27 +108,27 @@ function PostWrite() {
       <table className="table">
         <tbody>
           <tr>
-            <th className="table-primary">작성자</th>
+            <th className="table-primary">Writer</th>
             <td>
               <input type="text" className="form-control" value={localStorage.getItem("id")} size="50px" readOnly />
             </td>
           </tr>
 
           <tr>
-            <th className="table-primary">제목</th>
+            <th className="table-primary">Title</th>
             <td>
               <input type="text" className="form-control" value={title} onChange={changeTitle} size="50px" />
             </td>
           </tr>
 
           <tr>
-            <th className="table-primary">내용</th>
+            <th className="table-primary">Content</th>
             <td>
               <textarea className="form-control" value={content} onChange={changeContent} rows="10"></textarea>
             </td>
           </tr>
           <tr>
-            <th className="table-primary">파일</th>
+            <th className="table-primary">File</th>
             <td>
               {files.map((file, index) => (
                 <div key={index} style={{ display: "flex", alignItems: "center" }}>
@@ -152,18 +152,18 @@ function PostWrite() {
 
       <div className="my-5 d-flex justify-content-center">
         <button className="btn btn-outline-secondary" onClick={createPost}>
-          <i className="fas fa-pen"></i> 등록하기
+          <i className="fas fa-pen"></i> Upload
         </button>
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>알림</Modal.Title>
+          <Modal.Title>Notification</Modal.Title>
         </Modal.Header>
         <Modal.Body>{modalMessage}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
-            닫기
+            Close
           </Button>
         </Modal.Footer>
       </Modal>

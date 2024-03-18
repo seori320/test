@@ -63,7 +63,7 @@ function PostUpdate() {
 
 	/* 파일 업로드 */
 	const fileUpload = async (postId) => {
-		console.log("업로드할 파일 목록:", files);
+		console.log("Upload File List:", files);
 		// 파일 데이터 저장
 		const fd = new FormData();
 		files.forEach((file) => fd.append(`file`, file));
@@ -72,7 +72,7 @@ function PostUpdate() {
 			.then((resp) => {
 				console.log("[file.jsx] fileUpload() success :D");
 				console.log(resp.data);
-				handleShowModal("게시물과 파일을 성공적으로 수정했습니다. :D");
+				handleShowModal("Successful Delete Post and File :D");
 				
 				// 새롭게 등록한 글 상세로 이동
 				navigate(`/postdetail/${postId}`);
@@ -88,7 +88,7 @@ function PostUpdate() {
 		try {
 			await axios.delete(`http://localhost:8080/post/${postId}/file/delete?fileId=${fileId}`, {headers: headers});
 				console.log("[PostUpdate.jsx] fileDelete() success :D");
-				handleShowModal("파일 삭제 성공 :D");
+				handleShowModal("Successful Delete File :D");
 		} catch (error) {
 			console.error("[PostUpdate.jsx] fileDelete() error :<");
 			console.error(error);
@@ -113,7 +113,7 @@ function PostUpdate() {
 			if (files.length > 0) {
 				fileUpload(postId);
 			} else {
-				handleShowModal("게시글을 성공적으로 수정했습니다 :D");
+				handleShowModal("Successful modified your post :D");
 				navigate(`/postdetail/${resp.data.postId}`); // 새롭게 등록한 글 상세로 이동
 			}
 		})
@@ -130,27 +130,27 @@ function PostUpdate() {
 			<table className="table">
 				<tbody>
 					<tr>
-						<th className="table-primary">작성자</th>
+						<th className="table-primary">Writer</th>
 						<td>
 							<input type="text" className="form-control"  value={post.writerName} size="50px" readOnly />
 						</td>
 					</tr>
 
 					<tr>
-						<th className="table-primary">제목</th>
+						<th className="table-primary">Title</th>
 						<td>
 							<input type="text" className="form-control" value={title} onChange={changeTitle} size="50px" />
 						</td>
 					</tr>
 
 					<tr>
-						<th className="table-primary">내용</th>
+						<th className="table-primary">Content</th>
 						<td>
 							<textarea className="form-control" value={content} onChange={changeContent} rows="10" ></textarea>
 						</td>
 					</tr>
 					<tr>
-					<th className="table-primary">파일</th>
+					<th className="table-primary">File</th>
 					<td>
 					{severFiles.length > 0 || files.length > 0 ? (
 						<div className='file-box'>
@@ -193,18 +193,18 @@ function PostUpdate() {
 			</table>
 
 			<div className="my-3 d-flex justify-content-center">
-				<button className="btn btn-dark" onClick={updatePost}><i className="fas fa-pen"></i> 수정하기</button>
+				<button className="btn btn-dark" onClick={updatePost}><i className="fas fa-pen"></i> Modify</button>
 			</div>
 
 			{/* 모달 */}
 			<Modal show={showModal} onHide={handleCloseModal}>
 				<Modal.Header closeButton>
-					<Modal.Title>알림</Modal.Title>
+					<Modal.Title>Notification</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>{modalMessage}</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleCloseModal}>
-						닫기
+						Close
 					</Button>
 				</Modal.Footer>
 			</Modal>

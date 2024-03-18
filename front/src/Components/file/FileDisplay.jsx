@@ -1,4 +1,3 @@
-import React from 'react';
 import "../../css/fileDisplay.css"; // 추가: 스타일 파일 import
 
 const FileDisplay = (props) => {

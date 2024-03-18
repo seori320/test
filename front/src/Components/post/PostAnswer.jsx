@@ -113,23 +113,23 @@ function PostAnswer() {
 				</Form.Group>
 
 				<Form.Group controlId="formTitle">
-					<Form.Label>제목</Form.Label>
+					<Form.Label>Title</Form.Label>
 					<Form.Control
 						type="text"
 						value={title}
 						onChange={changeTitle}
-						placeholder="답글 제목을 입력하세요"
+						placeholder="Write Comment Title"
 					/>
 				</Form.Group>
 
 				<Form.Group controlId="formContent">
-					<Form.Label>내용</Form.Label>
+					<Form.Label>Content</Form.Label>
 					<Form.Control
 						as="textarea"
 						value={content}
 						onChange={changeContent}
 						rows={10}
-						placeholder="답글 내용을 입력하세요"
+						placeholder="Write Comment Content"
 					/>
 				</Form.Group>
 
@@ -137,18 +137,18 @@ function PostAnswer() {
 					variant="outline-secondary"
 					onClick={createPostAnswer}
 				>
-					답글 달기
+					Wirte Comment
 				</Button>
 			</Form>
 
 			<Modal show={showModal} onHide={handleCloseModal}>
 				<Modal.Header closeButton>
-					<Modal.Title>알림</Modal.Title>
+					<Modal.Title>Notification</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>{modalMessage}</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleCloseModal}>
-						닫기
+						Close
 					</Button>
 				</Modal.Footer>
 			</Modal>

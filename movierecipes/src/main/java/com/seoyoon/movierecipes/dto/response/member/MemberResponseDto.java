@@ -21,7 +21,7 @@ public class MemberResponseDto {
     private String username;
 
     @Builder
-    public MemberResponseDto(String email, String username) {
+    public MemberResponseDto(String email, String username, String roles) {
         this.email = email;
         this.username = username;
     }
@@ -30,7 +30,7 @@ public class MemberResponseDto {
     public static MemberResponseDto fromEntity(Member member) {
         return MemberResponseDto.builder()
                 .email(member.getEmail())
-                .username(member.getUsername())
+                .username(member.getName())
                 .build();
     }
 }

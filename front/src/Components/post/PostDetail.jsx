@@ -85,21 +85,21 @@ function PostDetail() {
 			<div>
 				<div className="my-3 d-flex justify-content-end">
 					<Link className="btn btn-outline-secondary" to="/postlist">
-						<i className="fas fa-list"></i> 글목록
+						<i className="fas fa-list"></i> Post List
 					</Link>{" "}
 					&nbsp;
 					<Link className="btn btn-outline-secondary" to={{ pathname: `/postanswer/${post.postId}` }} state={{ parentPost: parentPost }}>
-						<i className="fas fa-pen"></i> 답글쓰기
+						<i className="fas fa-pen"></i> Write Comment
 					</Link>{" "}
 					&nbsp;
 					{
 						(localStorage.getItem("id") === post.writerName) ?
 							<>
 								<Link className="btn btn-outline-secondary" to="/postupdate" state={{ post: updatePost }}>
-									<i className="fas fa-edit"></i> 수정
+									<i className="fas fa-edit"></i> Modify
 								</Link>{" "}
 								<Button variant="outline-danger" onClick={deletePost}>
-									<i className="fas fa-trash-alt"></i> 삭제
+									<i className="fas fa-trash-alt"></i> Delete
 								</Button>
 							</>
 							:
@@ -110,23 +110,23 @@ function PostDetail() {
 				<Table striped bordered>
 					<tbody>
 					<tr>
-						<th className="col-3">작성자</th>
+						<th className="col-3">Writer</th>
 						<td><span>{post.writerName}</span></td>
 					</tr>
 					<tr>
-						<th>제목</th>
+						<th>Title</th>
 						<td><span>{post.title}</span></td>
 					</tr>
 					<tr>
-						<th>작성일</th>
+						<th>Write Date</th>
 						<td><span>{post.createdDate}</span></td>
 					</tr>
 					<tr>
-						<th>조회수</th>
+						<th>View Count</th>
 						<td><span>{post.viewCount}</span></td>
 					</tr>
 					<tr>
-						<th>내용</th>
+						<th>Content</th>
 						<td></td>
 					</tr>
 					</tbody>
@@ -152,12 +152,12 @@ function PostDetail() {
 			{/* 삭제 알림 모달 */}
 			<Modal show={showModal} onHide={handleCloseModal}>
 				<Modal.Header closeButton>
-					<Modal.Title>알림</Modal.Title>
+					<Modal.Title>Notification</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>{modalMessage}</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleCloseModal}>
-						닫기
+						Close
 					</Button>
 				</Modal.Footer>
 			</Modal>

@@ -1,7 +1,5 @@
 package com.seoyoon.movierecipes.entity;
 
-import com.seoyoon.movierecipes.common.BaseTimeEntity;
-
 import jakarta.persistence.*;
 
 import lombok.Builder;

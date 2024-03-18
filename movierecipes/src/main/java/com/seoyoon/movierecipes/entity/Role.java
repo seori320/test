@@ -1,4 +1,4 @@
-package com.seoyoon.movierecipes.common;
+package com.seoyoon.movierecipes.entity;
 
 /**
  * 권한 타입

@@ -1,8 +1,5 @@
 package com.seoyoon.movierecipes.entity;
 
-import com.seoyoon.movierecipes.common.BaseTimeEntity;
-import com.seoyoon.movierecipes.common.Role;
-
 import jakarta.persistence.*;
 
 import lombok.Builder;
@@ -67,6 +64,10 @@ public class Member extends BaseTimeEntity implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    public String getName() {
+        return username;
     }
 
     @Override

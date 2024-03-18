@@ -83,7 +83,7 @@ function PostList() {
   const changeChoice = (event) => { setChoiceVal(event.target.value);};
   const changeSearch = (event) => { setSearchVal(event.target.value);};
 
-  // 페이징 보여주기 
+  // 페이징 보여주기
   const changePage = (page) => {
     setPage(page);
     getPostList(page);
@@ -101,17 +101,17 @@ function PostList() {
                 value={choiceVal}
                 onChange={changeChoice}
               >
-                <option>검색 옵션 선택</option>
-                <option value="title">제목</option>
-                <option value="content">내용</option>
-                <option value="writer">작성자</option>
+                <option>Search Option</option>
+                <option value="title">Title</option>
+                <option value="content">Content</option>
+                <option value="writer">Writer</option>
               </select>
             </td>
             <td>
               <input
                 type="text"
                 className="form-control"
-                placeholder="검색어"
+                placeholder="Search Word"
                 value={searchVal}
                 onChange={changeSearch}
               />
@@ -122,7 +122,7 @@ function PostList() {
                 className="btn btn-outline-secondary"
                 onClick={search}
               >
-                <i className="fas fa-search"></i> 검색
+                <i className="fas fa-search"></i> Search
               </button>
             </td>
           </tr>
@@ -133,10 +133,10 @@ function PostList() {
       <table className="table table-hover">
         <thead>
           <tr>
-            <th className="col-1">번호</th>
-            <th className="col-7">제목</th>
-            <th className="col-3">작성자</th>
-            <th className="col-1">조회수</th>
+            <th className="col-1">No.</th>
+            <th className="col-7">Title</th>
+            <th className="col-3">Writer</th>
+            <th className="col-1">View Count</th>
           </tr>
         </thead>
 
@@ -160,19 +160,19 @@ function PostList() {
 
       <div className="my-5 d-flex justify-content-center">
         <Link className="btn btn-outline-secondary" to="/postwrite">
-          <i className="fas fa-pen"></i> &nbsp; 글쓰기
+          <i className="fas fa-pen"></i> &nbsp; Write Post
         </Link>
       </div>
 
       {/* 삭제 알림 모달 */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>알림</Modal.Title>
+          <Modal.Title>Notification</Modal.Title>
         </Modal.Header>
         <Modal.Body>{modalMessage}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
-            닫기
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
@@ -204,7 +204,7 @@ function TableRow(props) {
 
 // 	return (
 // 			<tr>
-				
+
 // 					<th>{props.cnt}</th>
 // 					{
 // 						(post.del == 0) ?
@@ -227,12 +227,12 @@ function TableRow(props) {
 
 // 								<span className="del-span">⚠️ 이 글은 작성자에 의해 삭제됐습니다.</span>
 // 							</td>
-// 						</>	
+// 						</>
 // 					}
-					
-				
+
+
 // 			</tr>
-		
+
 // 	);
 // }
 

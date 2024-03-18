@@ -1,6 +1,6 @@
 package com.seoyoon.movierecipes.dto.request.member;
 
-import com.seoyoon.movierecipes.common.Role;
+import com.seoyoon.movierecipes.entity.Role;
 import com.seoyoon.movierecipes.entity.Member;
 
 import lombok.Builder;
